@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SmsConsent from "../components/SmsConsent.astro";
+---
+
+<BaseLayout
+  title="Merchant Cash Advance | Finpoint Funding"
+  description="Fast & affordable funding for small businesses. Finpoint Funding helps business owners obtain working capital with a hassle-free application process."
+  darkHeader
+  active="home"
+>
+  <main>
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img src="/images/hero-owner.jpg" alt="" />
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="brand-mark">Finpoint Funding</p>
+        <h1>Fast &amp; Affordable Funding for Small Businesses</h1>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#get-started">Get Funded</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="process">
+      <div class="container">
+        <h2 class="section-label reveal" style="font-size: 0.95rem; margin-bottom: 0">Simple Process</h2>
+        <div class="process-grid">
+          <article class="process-item reveal">
+            <div class="process-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M4 6h16M4 12h10M4 18h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h3>Get Started</h3>
+            <p>Give us a call or submit your information here to receive an application.</p>
+          </article>
+          <article class="process-item reveal">
+            <div class="process-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </div>
+            <h3>Get Approved</h3>
+            <p>We work fast to provide new clients with same day offers.</p>
+          </article>
+          <article class="process-item reveal">
+            <div class="process-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18M7 8h7.5a3.5 3.5 0 010 7H9" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <h3>Get Funded</h3>
+            <p>Upon approval, the funds will be transferred to your account the same day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story" id="about">
+      <div class="story-bg" aria-hidden="true">
+        <img src="/images/hero-speaking.jpg" alt="" />
+      </div>
+      <div class="container story-grid">
+        <div class="reveal">
+          <p class="section-label" style="color: var(--brand-bright)">About</p>
+          <blockquote class="quote">
+            “Finally, I've met a lender that understands my needs. Finpoint's team was very professional and it was truly a truly amazing experience working with them. The whole process could not have been easier.”
+          </blockquote>
+        </div>
+        <div class="story-copy reveal">
+          <p>
+            Our professionals are equipped with the latest knowledge and resources to provide tailored funding solutions, ensuring that clients receive the best possible support and achieve their funding goals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <p class="section-label">About Us</p>
+          <h2>Finpoint goes above and beyond traditional funding providers.</h2>
+        </div>
+        <div class="about-text reveal">
+          <p>
+            We help business owners obtain the working capital that they need with a hassle free application &amp; funding process.
+          </p>
+          <p>
+            We work with your specific industry and have unique programs for each business type.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section lead-form-section" id="get-started">
+      <div class="container form-layout">
+        <div class="reveal">
+          <div class="response-pill"><span class="dot" aria-hidden="true"></span> Current Response Time: 20 min</div>
+          <p class="section-label">Contact Us</p>
+          <h2>Get Started.</h2>
+        </div>
+
+        <form class="form-panel reveal" data-lead-form novalidate>
+          <div class="form-success" role="status">
+            Thank you for reaching out! We'll be in touch with you shortly.
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="first-name">First Name</label>
+              <input id="first-name" name="firstName" type="text" autocomplete="given-name" required />
+            </div>
+            <div class="field">
+              <label for="last-name">Last Name</label>
+              <input id="last-name" name="lastName" type="text" autocomplete="family-name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field full">
+              <label for="funding-amount">Funding Amount Desired</label>
+              <input id="funding-amount" name="fundingAmount" type="text" inputmode="decimal" />
+            </div>
+
+            <SmsConsent id="sms-consent" />
+
+            <div class="form-submit">
+              <button class="btn btn-primary" type="submit" style="width: 100%">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

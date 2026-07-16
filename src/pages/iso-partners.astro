@@ -1,0 +1,88 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SmsConsent from "../components/SmsConsent.astro";
+---
+
+<BaseLayout
+  title="ISO Partners | Finpoint"
+  description="Become an ISO Partner with Finpoint Funding. Build meaningful partnerships and help small business owners find the capital they need."
+  active="iso"
+>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="section-label reveal">Become an ISO Partner</p>
+        <h1 class="reveal">Building Meaningful Partnerships to Fuel the American Dream.</h1>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0; background: var(--white)">
+      <div class="container" style="max-width: 760px">
+        <p class="reveal" style="color: var(--muted); font-size: 1.08rem; margin: 0 0 1rem">
+          In the current climate, businesses need additional capital now more than ever—and it will only continue to grow. Fortunately, Finpoint is in the perfect position to help small business owners find the capital they need for whatever comes their way.
+        </p>
+        <p class="reveal" style="color: var(--muted); font-size: 1.08rem; margin: 0">
+          When you send us a qualified borrower, they will be assigned a dedicated funding manager upon completion of their application. Our funding managers go above and beyond to educate your client, narrow down their options, and help them choose the best financial product for their business.
+        </p>
+
+        <h2 class="reveal" style="font-family: var(--display); font-size: 1.6rem; margin: 2.5rem 0 0">Our Process</h2>
+        <ol class="iso-steps">
+          <li class="reveal">Sign up as an ISO Partner</li>
+          <li class="reveal">Submit your client's application or refer them</li>
+          <li class="reveal">Get a decision for your client</li>
+          <li class="reveal">Get your client funded</li>
+          <li class="reveal">Get paid</li>
+        </ol>
+        <div class="reveal" style="margin-top: 1.75rem">
+          <a class="btn btn-primary" href="#sign-up-iso">Sign Up ISO</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section iso-form-section" id="sign-up-iso">
+      <div class="container form-layout">
+        <div class="reveal">
+          <div class="response-pill" style="color: var(--brand); border-color: rgba(0,129,185,0.25); background: rgba(0,129,185,0.08)">
+            <span class="dot" aria-hidden="true"></span> Current Response Time: 20 min
+          </div>
+          <p class="section-label">Sign Up</p>
+          <h2>Become a partner today.</h2>
+        </div>
+
+        <form class="form-panel light reveal" data-lead-form novalidate>
+          <div class="form-success" role="status">
+            Thank you for reaching out! We'll be in touch with you shortly.
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="iso-first-name">First Name</label>
+              <input id="iso-first-name" name="firstName" type="text" autocomplete="given-name" required />
+            </div>
+            <div class="field">
+              <label for="iso-last-name">Last Name</label>
+              <input id="iso-last-name" name="lastName" type="text" autocomplete="family-name" required />
+            </div>
+            <div class="field full">
+              <label for="iso-email">Email</label>
+              <input id="iso-email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field full">
+              <label for="iso-phone">Phone Number <span class="optional">(optional)</span></label>
+              <input id="iso-phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+            <div class="field full">
+              <label for="iso-info">Additional info</label>
+              <textarea id="iso-info" name="additionalInfo"></textarea>
+            </div>
+
+            <SmsConsent id="iso-sms-consent" />
+
+            <div class="form-submit">
+              <button class="btn btn-primary" type="submit" style="width: 100%">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

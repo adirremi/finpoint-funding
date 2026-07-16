@@ -1,0 +1,39 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  darkHeader?: boolean;
+  active?: "home" | "iso" | "faqs" | "privacy" | "terms";
+}
+
+const {
+  title,
+  description = "Fast & affordable funding for small businesses from Finpoint Funding.",
+  darkHeader = false,
+  active,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+  </head>
+  <body>
+    <Header dark={darkHeader} active={active} />
+    <slot />
+    <Footer />
+    <script>
+      import "../scripts/main.js";
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+---
+interface Props {
+  dark?: boolean;
+  active?: "home" | "iso" | "faqs" | "privacy" | "terms";
+}
+
+const { dark = false, active } = Astro.props;
+---
+
+<header class:list={["site-header", { "on-dark": dark }]}>
+  <div class="nav-inner">
+    <a class="logo" href="/" aria-label="Finpoint Funding home">
+      {
+        dark ? (
+          <img
+            class="logo-img"
+            src="/images/logo-white.png"
+            data-logo-light="/images/logo-white.png"
+            data-logo-dark="/images/logo.png"
+            alt="Finpoint Funding"
+          />
+        ) : (
+          <img src="/images/logo.png" alt="Finpoint Funding" />
+        )
+      }
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li>
+        <a class:list={["nav-link", { "is-active": active === "iso" }]} href="/iso-partners">ISO Partners</a>
+      </li>
+      <li>
+        <a class="nav-link" href="/#get-started">Get in Touch</a>
+      </li>
+      <li>
+        <a class:list={["nav-link", { "is-active": active === "faqs" }]} href="/faqs">FAQs</a>
+      </li>
+      <li>
+        <a class:list={["nav-link", { "is-active": active === "privacy" }]} href="/privacy-policy">Privacy Policy</a>
+      </li>
+      <li>
+        <a class:list={["nav-link", { "is-active": active === "terms" }]} href="/terms-of-service">Terms of Service</a>
+      </li>
+      <li>
+        <a class="nav-link nav-cta" href="/#get-started">Get Funded</a>
+      </li>
+    </ul>
+  </div>
+</header>
