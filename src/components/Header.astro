@@ -1,7 +1,7 @@
 ---
 interface Props {
   dark?: boolean;
-  active?: "home" | "iso" | "faqs" | "privacy" | "terms";
+  active?: "home" | "iso" | "faqs" | "privacy" | "terms" | "contact";
 }
 
 const { dark = false, active } = Astro.props;
@@ -32,7 +32,7 @@ const { dark = false, active } = Astro.props;
         <a class:list={["nav-link", { "is-active": active === "iso" }]} href="/iso-partners">ISO Partners</a>
       </li>
       <li>
-        <a class="nav-link" href="/#get-started">Get in Touch</a>
+        <a class:list={["nav-link", { "is-active": active === "contact" }]} href="/contact">Get in Touch</a>
       </li>
       <li>
         <a class:list={["nav-link", { "is-active": active === "faqs" }]} href="/faqs">FAQs</a>
