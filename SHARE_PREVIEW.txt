@@ -1,0 +1,37 @@
+Finpoint Funding — share preview & SEO verification
+====================================================
+
+Production URL: https://finpoint-funding.vercel.app
+
+WhatsApp / Facebook / LinkedIn (Open Graph)
+-------------------------------------------
+1. Deploy the latest commit to Vercel (main branch).
+2. Share https://finpoint-funding.vercel.app in WhatsApp or paste the URL in Facebook Sharing Debugger:
+   https://developers.facebook.com/tools/debug/
+3. Click "Scrape Again" if you still see an old image or title (caches can persist for hours).
+4. Expected preview:
+   - Title: page-specific <title> (homepage: from index.astro)
+   - Description: meta description from BaseLayout
+   - Image: https://finpoint-funding.vercel.app/images/og-share.jpg (1200×630)
+
+Quick checks without sharing:
+- View page source and confirm og:image, og:title, og:description, twitter:card=summary_large_image
+- Open /images/og-share.jpg directly in the browser
+
+Google search snippets
+----------------------
+- Google uses <title> and meta name="description" (set in BaseLayout per page).
+- JSON-LD Organization is in the homepage layout for richer entity signals.
+- robots.txt allows crawling; sitemap: https://finpoint-funding.vercel.app/sitemap.xml
+- Submit sitemap in Google Search Console when the property is verified.
+- Re-indexing can take days to weeks; use URL Inspection → Request indexing for the homepage.
+
+Favicon / tab icon
+------------------
+- /favicon.png (512×512) linked in <head>
+- /apple-touch-icon.png (180×180) for iOS home screen
+- Hard-refresh or clear cache if the old /images/logo.png icon still appears.
+
+Twitter / X
+-----------
+- summary_large_image card uses the same og-share.jpg and title/description meta tags.

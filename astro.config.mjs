@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://www.finpointfunding.com",
+  site: "https://finpoint-funding.vercel.app",
   trailingSlash: "never",
 });

@@ -12,10 +12,32 @@ interface Props {
 
 const {
   title,
-  description = "Fast & affordable funding for small businesses from Finpoint Funding.",
+  description = "Fast & affordable funding for small businesses. Finpoint Funding helps business owners get working capital with a simple application process.",
   darkHeader = false,
   active,
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogImage = new URL("/images/og-share.jpg", Astro.site).href;
+const logoUrl = new URL("/images/logo.png", Astro.site).href;
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Finpoint Funding",
+  url: Astro.site,
+  logo: logoUrl,
+  email: "deals@finpointfunding.com",
+  telephone: "+1-973-692-7551",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "1 Maiden Lane, 5th floor",
+    addressLocality: "New York",
+    addressRegion: "NY",
+    postalCode: "10038",
+    addressCountry: "US",
+  },
+};
 ---
 
 <!doctype html>
@@ -26,7 +48,23 @@ const {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Finpoint Funding" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
   </head>
   <body>
     <Header dark={darkHeader} active={active} />
