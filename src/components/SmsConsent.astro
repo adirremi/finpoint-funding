@@ -9,7 +9,7 @@ const { id = "sms-consent" } = Astro.props;
 <div class="sms-consent">
   <div class="consent-row">
     <input type="checkbox" id={id} name="smsConsent" />
-    <label for={id}>I agree to receive SMS text messages from Finpoint Funding LLC</label>
+    <label for={id}>I agree to receive SMS text messages from Finpoint Funding LLC <span class="optional">(optional)</span></label>
   </div>
   <p>
     By providing your mobile phone number and checking this box, you consent to receive SMS text messages (including automated messages) from Finpoint Funding LLC for customer care, account-related, and promotional/marketing purposes. Message frequency may vary. Message and data rates may apply. You may opt out at any time by replying STOP. For help, reply HELP or contact us at

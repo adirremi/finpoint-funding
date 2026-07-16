@@ -59,6 +59,9 @@
   const FORM_ERROR_MSG =
     "Something went wrong. Please email deals@finpointfunding.com or call (973) 692-7551.";
   const FORM_SUBMIT_URL = "https://formsubmit.co/ajax/deals@finpointfunding.com";
+  const SMS_CONSENT_TEXT =
+    "By providing your mobile phone number and checking the SMS consent box, you consent to receive SMS text messages (including automated messages) from Finpoint Funding LLC. Message frequency may vary. Message and data rates may apply. Reply STOP to opt out. Consent is not a condition of purchase.";
+
 
   document.querySelectorAll("form[data-lead-form]").forEach((form) => {
     form.addEventListener("submit", async (event) => {
@@ -98,7 +101,10 @@
 
       const smsCheckbox = form.querySelector('[name="smsConsent"]');
       const payload = Object.fromEntries(new FormData(form).entries());
-      payload.smsConsent = smsCheckbox && smsCheckbox.checked ? "Yes" : "No";
+      const smsChecked = Boolean(smsCheckbox && smsCheckbox.checked);
+      payload.smsConsent = smsChecked ? "Yes" : "No";
+      payload.smsConsentTimestamp = new Date().toISOString();
+      payload.smsConsentText = SMS_CONSENT_TEXT;
 
       const isIso = form.getAttribute("data-form-type") === "iso";
       payload._subject = isIso ? "ISO Partner inquiry" : "New Finpoint Funding lead";

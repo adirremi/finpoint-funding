@@ -20,6 +20,15 @@ After activation, new submissions should arrive with subject:
 
 If submissions fail on the site, users see an error with deals@finpointfunding.com and (973) 692-7551.
 
+SMS consent proof (included in every submission email):
+- smsConsent: Yes or No (checkbox is optional; form submits without it)
+- smsConsentTimestamp: ISO-8601 UTC time of submission (audit trail)
+- smsConsentText: copy of the consent language shown on the form
+- phone: optional field; if provided, appears alongside consent fields
+
+The lead email in deals@finpointfunding.com is the primary consent record when smsConsent is Yes (timestamp + text + phone in one message). No separate double-opt-in click is stored in this site; keep activation/lead emails for compliance records.
+
+
 עברית
 -----
 הטפסים בדף הבית ("Get Started") ובדף ISO Partners שולחים דרך FormSubmit ל-deals@finpointfunding.com.
