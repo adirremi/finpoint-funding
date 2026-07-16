@@ -104,7 +104,9 @@ import SmsConsent from "../components/SmsConsent.astro";
           <h2>Get Started.</h2>
         </div>
 
-        <form class="form-panel reveal" data-lead-form novalidate>
+        <form class="form-panel reveal" data-lead-form data-form-type="lead" method="POST" novalidate>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" />
+
           <div class="form-success" role="status">
             Thank you for reaching out! We'll be in touch with you shortly.
           </div>

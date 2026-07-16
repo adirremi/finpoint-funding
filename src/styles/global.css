@@ -731,6 +731,23 @@ select {
   display: block;
 }
 
+.form-error {
+  display: block;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: rgba(180, 40, 40, 0.12);
+  border: 1px solid rgba(220, 60, 60, 0.45);
+  color: #ffb4b4;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-error[hidden] {
+  display: none;
+}
+
+.form-panel.is-sent .form-grid,
 .form.is-sent .form-grid {
   display: none;
 }

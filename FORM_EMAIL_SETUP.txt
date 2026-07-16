@@ -1,0 +1,36 @@
+Finpoint Funding — Form email setup (FormSubmit)
+הגדרת שליחת טפסים בדוא"ל (FormSubmit)
+
+Live site / אתר חי: https://finpoint-funding.vercel.app
+Inbox / תיבת יעד: deals@finpointfunding.com
+
+ENGLISH
+-------
+Forms on the home page ("Get Started") and ISO Partners page post via FormSubmit AJAX to deals@finpointfunding.com.
+
+IMPORTANT — first-time activation:
+1. Submit any test lead from the live site (or locally).
+2. FormSubmit sends an activation email to deals@finpointfunding.com.
+3. Someone with access to that inbox MUST open the email and click Confirm / Activate.
+4. Submit another test lead and confirm the lead email arrives in the inbox (check Spam/Junk if missing).
+
+After activation, new submissions should arrive with subject:
+- "New Finpoint Funding lead" (home form)
+- "ISO Partner inquiry" (ISO form)
+
+If submissions fail on the site, users see an error with deals@finpointfunding.com and (973) 692-7551.
+
+עברית
+-----
+הטפסים בדף הבית ("Get Started") ובדף ISO Partners שולחים דרך FormSubmit ל-deals@finpointfunding.com.
+
+חשוב — הפעלה ראשונה:
+1. שלחו ליד בדיקה מהאתר החי (או מקומית).
+2. FormSubmit שולח מייל הפעלה ל-deals@finpointfunding.com.
+3. חובה ללחוץ Confirm / Activate במייל ההפעלה.
+4. שלחו ליד בדיקה נוסף וודאו שהמייל הגיע (בדקו גם ספאם).
+
+לאחר ההפעלה, נושא המייל:
+- "New Finpoint Funding lead" (דף הבית)
+- "ISO Partner inquiry" (ISO)
+
